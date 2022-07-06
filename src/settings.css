@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+.bg-cutter {
+    top: calc( 100vh + 8rem);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 20%);
+}
+
+.bg-cutter-sec {
+  clip-path: polygon(0 0, 100% 80%, 100% 100%, 0 20%);
+}
+
+/* .wizard {
+  display: none !important;
+} */
