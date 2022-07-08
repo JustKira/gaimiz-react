@@ -29,6 +29,7 @@ import { refreshTokenAction , getUserAction , getEvents} from './redux/actions';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {faChevronLeft,faChevronRight,faShoppingCart,faUpload,faCircleExclamation} from '@fortawesome/free-solid-svg-icons'
+import CartPage from './pages/Users/CartPage';
 
 library.add(faChevronLeft,faChevronRight,faShoppingCart,faUpload,faCircleExclamation)
 
@@ -69,7 +70,7 @@ function App(props) {
           <Route path='/profile' element={<ProfilePage/>} />
           <Route path="/laptop" element={<LaptopOrderWizard/>} />
           <Route path="/console" element={<ConsoleOrderWizard/>} />
-
+          <Route path='/cart' element={<CartPage/>} />
           <Route element={<AdminAuth/>}>
           <Route path="/admin" element={<AdminPage/>} />
 

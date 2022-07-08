@@ -8,8 +8,8 @@ const Header = ({user}) => {
         <nav
             className='flex h-24 bg-black text-white font-semibold justify-between items-center w-full '>
             <ul className="flex px-8">
-                <li className="mx-4 px-2 duration-150 ease-in hover:text-cyan-400">Cart
-                    <FontAwesomeIcon className='mx-2' size="sm" icon="shopping-cart"/>
+                <li className="mx-4 px-2 duration-150 ease-in hover:text-cyan-400"><Link to="/cart">Cart
+                    <FontAwesomeIcon className='mx-2' size="sm" icon="shopping-cart"/></Link>
                 </li>
                 <li className="mx-4 px-2 duration-150 ease-in hover:text-cyan-400">
                     <IsUser user={user}/>

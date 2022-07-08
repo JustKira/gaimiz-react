@@ -6,10 +6,11 @@ const Home = () => {
     return (
 
         <div className="">
-            <img src={'/assets/home1.png'} className="cover-fill" alt="home1"/>
+            <div className='flex justify-center'>
+            <img src={'/assets/home1.png'} className="w-screen" alt="home1"/></div>
             <div
                 className="absolute bg-cutter bg-white h-screen w-screen -z-10 drop-shadow-white"></div>
-            <div className="absolute h-20 w-full bg-white">.</div>
+            <div className="absolute h-screen top-32 w-full -z-10 bg-white">.</div>
             <div
                 className="absolute bg-cutter-sec bg-white opacity-70 top-extreme-x h-screen w-screen drop-shadow-white"></div>
             <div
@@ -65,7 +66,7 @@ const Home = () => {
                                 </h1>
                                 <img className="" src={'/assets/home4-1.png'} alt=""/>
                                 <button
-                                    className="absolute bottom-72 right-40 z-10 tracking-widest font-semibold text-white border-4 px-16 py-4 bg-black border-black rounded-md uppercase drop-shadow-black">
+                                    className="absolute bottom-1/3 left-3/4 z-10 tracking-widest font-semibold text-white border-4 px-16 py-4 bg-black border-black rounded-md uppercase drop-shadow-black">
                                     order now
                                 </button>
                             </div>

@@ -1,7 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import DesignCarousel from '../../components/DesignCarousel'
-import LaptopConfig from '../../components/LaptopConfig'
-import VideoHolder from '../../components/VideoHolder'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 // <LaptopConfig nextPage={nextPage} previousPage={previousPage}/> < div
 // className = '' > <div className="flex flex-col mt-20 justify-center
