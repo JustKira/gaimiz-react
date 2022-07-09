@@ -1,6 +1,6 @@
 
 
-function authReducer(state = { state:{} },action){
+function authReducer(state = { state: null },action){
     switch (action.type) {
         case 'USER_LOGIN':
           return { ...state, state : action.payload }
