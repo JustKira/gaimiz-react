@@ -17,7 +17,7 @@ const Home = () => {
                 className="flex flex-col w-full justify-center items-center relative drop-shadow-cont">
                 <div className="mx-40">
                     <div className="h-60 bg-white"></div>
-                    <div className="flex w-full justify-center relative">
+                    <div className="flex w-full justify-center relative ">
                         <h1
                             className="absolute font-bold left-16 leading-snug text-hero-ratio text-white drop-shadow-white mt-10">
                             CUSTO-<br/>MIZE<br/>YOUR LAPTOP
@@ -25,17 +25,17 @@ const Home = () => {
                         <img
                             className="absolute drop-shadow-white bottom-1/3 left-44 w-1/6"
                             src={'/assets/home3-white.png'}
-                            alt=""/>
+                            alt="home3-white"/>
                         <img
-                            className="mix-blend-difference bg-cover overflow-visible w-oversize-1"
+                            className="mix-blend-difference bg-cover z-10 overflow-visible w-oversize-1"
                             src={ '/assets/home6-1.png'}
-                            alt=""/>
+                            alt="home6-1"/>
 
                         <img
                             
                             className="absolute top-20 right-8 border-8 z-20 border-black w-im-1"
                             src={ '/assets/home2.png' }
-                            alt=""/>
+                            alt="home2"/>
 
                         <h1
                             className="absolute text-3xl bottom-1/3 right-24 hidden z-20 font-bold text-white leading-snug tracking-widest xl:block">
