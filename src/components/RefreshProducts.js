@@ -8,7 +8,7 @@ const RefreshProducts = () => {
     const submit = (e) => {
         e.preventDefault()
         console.log(code)
-        let response = fetch('${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/api/prod-refresh', {
+        let response = fetch(`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/api/prod-refresh`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
