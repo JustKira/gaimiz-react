@@ -53,7 +53,7 @@ const LoginForm = (props) => {
         }
     }
 
-    if (props.accessToken === null || props.accessToken === undefined) {
+    if (props.accessToken === null || props.accessToken === undefined || props.accessToken === {}) {
         return (
             <div>
                 <div>
