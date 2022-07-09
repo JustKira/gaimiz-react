@@ -39,7 +39,7 @@ const RegisterForm = (props) => {
     const [response_txt,
         setResponse_txt] = useState("")
 
-    if (props.accessToken === null || props.accessToken === undefined || props.accessToken === {}) {
+    if (props.accessToken.access === null || props.accessToken.access === undefined) {
         return (
 
             <div className="w-full">

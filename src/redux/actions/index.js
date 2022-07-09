@@ -13,6 +13,10 @@ export const userLogin = (email,password) => async (dispatch,getState) => {
         })
         let data = await response.json()
         console.log(data)
+        if(data.detail) {
+            return dispatch({ type: 'USER_LOGIN', payload: null })
+        }
+
         dispatch({ type: 'USER_LOGIN', payload: data })
         dispatch(getUserAction())
         
