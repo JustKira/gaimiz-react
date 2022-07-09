@@ -125,7 +125,7 @@ const LoginForm = (props) => {
 
 const mapStateToProps = (state) => {
     if (state.auth.state) {
-        return {accessToken: state.auth.state.access}
+        return {accessToken: state.auth.state}
     }
 }
 export default compose(reduxForm({form: 'loginForm'}), connect(mapStateToProps, {userLogin, getUserAction, refreshTokenAction}))(LoginForm)
