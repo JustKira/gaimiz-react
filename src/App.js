@@ -56,9 +56,10 @@ function App(props) {
   },[props.accessToken])
 
 
-  return (
+  return ( 
+  <div className="bg-[url('../public/assets/background.png')] -z-50 bg-repeat">
     <BrowserRouter>
-        
+     
       <Header />
       <Routes>
 
@@ -83,6 +84,7 @@ function App(props) {
       </Routes>
       {/* <Footer /> */}
     </BrowserRouter>
+    </div>
   )
 }
 

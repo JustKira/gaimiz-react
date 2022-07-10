@@ -8,15 +8,15 @@ const Home = () => {
 
         <div className="">
             <div className='flex justify-center'>
-                <img src={'/assets/home1.png'} className="w-screen" alt="home1"/></div>
+                <img src={'/assets/home1.png'} className="w-screen z-20" alt="home1"/></div>
             <div
-                className="absolute bg-cutter bg-white h-screen w-screen -z-10 drop-shadow-white"></div>
-            <div className="absolute h-screen top-32 w-full -z-10 bg-white">.</div>
+                className="absolute bg-cutter bg-white h-screen w-screen z-10 drop-shadow-white"></div>
+            <div className="absolute h-screen top-32 w-full z-10 bg-white">.</div>
             <div
                 className="absolute bg-cutter-sec hidden md:block bg-white opacity-70 top-extreme-x h-screen w-screen drop-shadow-white"></div>
 
             <div
-                className="flex flex-col w-full justify-center items-center relative drop-shadow-cont">
+                className="flex flex-col w-full z-20 justify-center items-center relative drop-shadow-cont">
                 <div className="mx-40">
                     <div className="h-14 md:h-40 lg:h-60 bg-white"></div>
                     <div className="flex w-full justify-center relative ">
@@ -111,16 +111,6 @@ const Home = () => {
                     src={'/assets/home5.png'}
                     alt=""/>
             </div>
-
-            <img
-                className="fixed w-auto top-0 -z-50 border-b-4 border-black"
-                src={'/assets/background.png'}
-                alt=""/>
-
-            <img
-                className="fixed w-auto bottom-0 -z-50 border-t-4 border-black"
-                src={'/assets/background.png'}
-                alt=""/>
         </div>
     )
 }
