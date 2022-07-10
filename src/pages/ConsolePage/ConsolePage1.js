@@ -18,18 +18,18 @@ const ConsolePage1 = ({nextPage, handleSubmit}) => {
     }
 
     return (
-        <div>
+        <div >
 
             <div
-                className=' absolute top-72 h-36 pt-32 pb-40 bg-white w-full mb-20 text-black text-6xl font-bold self-center text-center'>
+                className=' absolute top-32 md:top-72 h-8 md:h-36 pt-8 md:pt-32 pb-16 md:pb-40 bg-white w-full mb-20 text-black text-base md:text-6xl font-bold self-center text-center'>
                 CUSTOMIZE YOUR CONSOLE YOU LITTLE GAMER</div>
-            <div className="flex flex-col mt-20 justify-center items-center w-full  ">
-                <div className='flex flex-col bg-black pb-20 pt-96 px-72 rounded-3xl mb-20'>
+            <div className="flex flex-col mt-10 md:mt-20 justify-center items-center w-full  ">
+                <div className='flex flex-col bg-black pb-20 pt-32 md:pt-96 md:px-72 rounded-lg md:rounded-3xl mb-20'>
                     <form className="" onSubmit={handleSubmit(onSubmit)}>
 
-                        <div className='flex w-full justify-between items-center my-20 relative'>
-                            <label for='first' className='text-white absolute text-3xl font-bold -left-56'>
-                                Laptop Model
+                        <div className='flex w-full justify-center md:justify-between items-center my-20 relative'>
+                            <label for='first' className='text-white absolute text-sm md:text-3xl font-bold left-4 -top-4 md:top-0 md:-left-56'>
+                                Console Model
                             </label>
 
                             <div className='w-full  px-10'>
@@ -62,7 +62,7 @@ const ConsolePage1 = ({nextPage, handleSubmit}) => {
                             </div>
                             <button
                                 type="submit"
-                                className=' absolute top-2 -right-52 text-white border-4 py-2 px-12 tracking-widest text-lg font-light bg-cyan-400 border-cyan-400 rounded-2xl uppercase drop-shadow-black'>Next</button>
+                                className=' absolute -bottom-20 right-4 md:bottom-0 md:top-2 md:-right-52 text-white border-4 md:py-2 px-8 md:px-12 tracking-widest text-sm md:text-lg font-light bg-cyan-400 border-cyan-400 rounded-lg md:rounded-2xl uppercase drop-shadow-black'>Next</button>
                         </div>
                     </form>
                     <VideoHolder text="Need help what this video"/>

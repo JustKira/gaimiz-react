@@ -24,6 +24,7 @@ const LaptopOrderWizard = () => {
     return (
         <div>
             <img src="assets/background.png" className="fixed -top-10 -z-10"/>
+
             {page === 1 && (<ConsolePage1 nextPage={() => nextPage()} />)}
             {page === 2 && (<ConsolePage2 previousPage={() => previousPage()} nextPage={() => nextPage()} path={path} setPath={() => setPath()} />)}
             {page === 3 && (<LogoPage1  previousPage={() => previousPage()} nextPage={() => nextPage() } path={path}/>)}

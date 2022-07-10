@@ -25,9 +25,9 @@ const ConsoleField = ({
             <div>
                 <input
                     {...input}
-                    className=" py-3 mt-3 mx-4 text-center font-bold text-slate-800 relative bg-gray-300 rounded text-sm shadow outline-none focus:outline-none focus:ring w-full"
+                    className=" py-2 md:py-3 mt-3 mx-4 text-center font-bold text-slate-800 relative bg-gray-300 rounded text-sm shadow outline-none focus:outline-none focus:ring w-full"
                     placeholder={placeholder}
-                    type={type}/> {touched && ((error && <span className=" absolute text-white px-3 py-3 mt-3 mx-8">{error}</span>) || (warning && <span  className=" absolute text-white px-3 py-3 mt-3 mx-8">{warning}</span>))}
+                    type={type}/> {touched && ((error && <span className=" absolute text-white px-3 py-3 mt-3 mx-8">{error}</span>) || (warning && <span className=" absolute text-white px-3 py-3 mt-3 mx-8">{warning}</span>))}
             </div>
         </div>
     )
@@ -127,7 +127,7 @@ const ConsolePage2 = ({
         if (formValues.body === false && formValues.control === 0) {
             return setError_str(" PLEASE ADD Controllor OR ADD-BACK TO PROCEED TO NEXT STEP ")
         }
-        
+
         if (customImage === true) {
             formValues.modelimage = `customProduct_console${path}.png`
             formValues.customimage = 'True'
@@ -145,10 +145,10 @@ const ConsolePage2 = ({
                 <div
                     className='absolute bottom-40 left-1/2 -translate-x-1/2 w-screen flex justify-evenly py-10 px-42 z-10'>
                     <img
-                        className='ml-32 h-80  rounded-2xl'
+                        className='ml-32 h-32 md:h-80   rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/tmp/done/customProduct_console${path}_console_l.png`}/>
                     <img
-                        className='mr-32 h-80 rounded-2xl'
+                        className='mr-32 h-32 md:h-80  rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/tmp/done/customProduct_console${path}_console_r.png`}/></div>
             )
         } else {
@@ -156,10 +156,10 @@ const ConsolePage2 = ({
                 <div
                     className='absolute bottom-40 left-1/2 -translate-x-1/2 w-screen flex justify-evenly py-10 px-42 z-10'>
                     <img
-                        className='ml-32 h-80  rounded-2xl'
+                        className='ml-32 h-32 md:h-80  rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/products/done/product_console${imageid}_console_l.png`}/>
                     <img
-                        className='mr-32 h-80 rounded-2xl'
+                        className='mr-32 h-32 md:h-80  rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/products/done/product_console${imageid}_console_r.png`}img/></div>
             )
         }
@@ -179,12 +179,13 @@ const ConsolePage2 = ({
 
     return (
         <form
-            className="flex flex-col m-20 mx-52 justify-center items-center"
+            className="flex flex-col m-20 md:mx-52 justify-center items-center"
             onSubmit={handleSubmit(onSubmit)}>
             <div
-                className='flex flex-col justify-center items-center bg-black pb-os-flat pt-96 w-full rounded-3xl relative'>
+                className='flex flex-col justify-center items-center px-40 bg-black pb-os-flat pt-80 md:pt-96 w-full rounded-3xl relative'>
 
-                <h1 className=' absolute text-white top-14 left-20 text-3xl font-bold'>CONSOLE DESIGN</h1>
+                <h1
+                    className=' absolute bg-black text-white top-14 text-3xl font-bold'>CONSOLE DESIGN</h1>
 
                 <div
                     className='absolute left-0 top-80 w-full flex justify-between items-center z-10 '>
@@ -207,15 +208,15 @@ const ConsolePage2 = ({
                         value=''/>
                     <label for="image-input">
                         <img
-                            className=' h-80'
-                            src={`http://127.0.0.1:8000/media/products/raw/product${imageid}.png`}/>
+                            className='h-32 md:h-80'
+                            src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/products/raw/product${imageid}.png`}/>
 
                         <h1 className='text-2xl text-center mt-2 font-semibold'>
                             {imageid + 1}/{images_list.list}
                         </h1>
                     </label>
                     <span
-                        className='cursor-pointer  bg-none duration-200 ease-in hover:bg-slate-300 px-3 rounded-full'>
+                        className='cursor-pointer bg-none duration-200 ease-in hover:bg-slate-300 px-3 rounded-full'>
                         <FontAwesomeIcon
                             size="4x"
                             icon="chevron-right"
@@ -236,18 +237,18 @@ const ConsolePage2 = ({
                 <div>
 
                     <div
-                        className=' absolute top-64 h-52 py-60 -left-72 overflow bg-white w-fill-all text-black text-4xl font-semibold self-center text-center '></div>
+                        className=' absolute top-64 h-20 md:h-52 py-32 md:py-60 -left-72 overflow bg-white w-fill-all text-black text-4xl font-semibold self-center text-center '></div>
 
                     <div
-                        className='flex w-full bg-black pb-40 justify-between items-center my-20 pt-80'>
+                        className='flex w-full bg-black pb-40 justify-between items-center my-0 mb-20 md:my-20 pt-20 md:pt-80'>
 
                         <div className='w-full '>
                             <div className='flex my-32 w-full justify-between items-center'>
 
-                                <div className='flex flex-col pr-52 justify-between items-center'>
+                                <div className='flex flex-col pr-5 lg:pr-52 justify-between items-center'>
                                     <h1 className='text-white my-3 font-bold text-2xl uppercase'>Body</h1>
                                     <div
-                                        className='bg-cyan-400 text-white px-24 py-6 rounded-md flex justify-center items-center relative'>
+                                        className='bg-cyan-400 text-white px-12 md:px-24 py-4 md:py-6 rounded-md flex justify-center items-center relative'>
                                         <label>
                                             <Field
                                                 component="input"
@@ -256,25 +257,30 @@ const ConsolePage2 = ({
                                                 id="body"
                                                 name="body"/> {formV.body
                                                 ? <span
-                                                        className='absolute cursor-pointer  top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 font-semibold'>REMOVE</span>
+                                                        className='absolute cursor-pointer  top-1/2 left-1/2 -translate-x-1/2 text-sm md:text-base  -translate-y-1/2 font-semibold'>REMOVE</span>
                                                 : <span
-                                                    className='absolute cursor-pointer top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2  font-semibold'>ADD</span>}
+                                                    className='absolute cursor-pointer top-1/2 left-1/2 -translate-x-1/2 text-sm md:text-base  -translate-y-1/2  font-semibold'>ADD</span>}
                                         </label>
                                     </div>
-                                    <h1 className='bg-white rounded-md my-3 px-8 py-2 text-black text-2xl'>200L.E</h1>
+                                    <h1 className='bg-white rounded-md my-3 px-4 md:px-8 py-1 md:py-2 text-black text-2xl'>200L.E</h1>
                                 </div>
 
-                                <div className='flex flex-col pl-52  justify-between items-center'>
+
+
+                                <div className='flex flex-col pl-5 lg:pl-52  justify-between items-center'>
                                     <h1 className='text-white my-3 font-bold text-2xl uppercase'>Controller</h1>
-        
 
                                     <div className='flex justify-center items-center pr-9'>
                                         <Field component={ConsoleField} type="number" id="control" name="control"/>
                                     </div>
 
-
-                                    <h1 className='bg-white rounded-md my-3 px-8 py-2 text-black text-xl text-center'>75 L.E FORE EACH</h1>
+                                    <h1
+                                        className='bg-white rounded-md my-3 px-8 py-2 text-ssm text-black md:text-xl text-center'>75 L.E FORE EACH</h1>
                                 </div>
+
+
+
+
                                 <div className=' absolute text-white bottom-1/3 -translate-y-4'>
                                     <div className='flex w-full justify-between items-center'>
                                         <button

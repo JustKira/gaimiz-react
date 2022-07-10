@@ -1,11 +1,3 @@
-::-webkit-scrollbar {
-    display: none;
-  }
-
-  * {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
 
 .bg-cutter {
     top: calc( 100vh + 8rem);

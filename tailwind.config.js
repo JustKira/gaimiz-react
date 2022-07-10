@@ -22,6 +22,7 @@ module.exports = {
       },
     extend: {
         fontSize: {
+            'ssm' : '.7rem',
             'hero': '5rem',
             'hero-ratio': '5.5vw'
         },
@@ -48,6 +49,10 @@ module.exports = {
         },
         colors: {
             'inverted-cyan' : '#ff1a00'
+        },
+        lineHeight: {
+          '11' : '3rem',
+          '12' : '4rem'
         }
     }},
   plugins: [],

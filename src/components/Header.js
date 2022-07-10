@@ -6,16 +6,16 @@ import {Link} from "react-router-dom";
 const Header = ({user}) => {
     return (
         <nav
-            className='flex h-24 bg-black text-white font-semibold justify-between items-center w-full '>
+            className='flex lg:h-24 md:h-16 sm:h-10 bg-black text-white font-semibold justify-between items-center w-full text-ssm md:text-sm lg:text-base'>
             <ul className="flex px-8">
-                <li className="mx-4 px-2 duration-150 ease-in hover:text-cyan-400"><Link to="/cart">Cart
-                    <FontAwesomeIcon className='mx-2' size="sm" icon="shopping-cart"/></Link>
+                <li className="lg:mx-4 lg:px-2 duration-150 ease-in hover:text-cyan-400"><Link to="/cart">Cart
+                    <FontAwesomeIcon className='mx-2 hidden md:inline-block' size="sm" icon="shopping-cart"/></Link>
                 </li>
                 <li className="mx-4 px-2 duration-150 ease-in hover:text-cyan-400">
                     <IsUser user={user}/>
                 </li>
             </ul>
-            <ul className='flex items-center px-8'>
+            <ul className='flex items-center lg:px-8'>
                 <li className='px-2 duration-150 ease-in hover:text-cyan-400'>
                     <Link to="/laptop">Laptop Skins</Link>
                 </li>
@@ -26,7 +26,7 @@ const Header = ({user}) => {
 
                 <li>
                     <Link to="/">
-                        <img src="assets/logo.PNG" alt="Logo" className=" h-16"/>
+                        <img src="assets/logo.PNG" alt="Logo" className=" lg:h-16 md:h-12 h-8 py-2"/>
                     </Link>
                 </li>
             </ul>
