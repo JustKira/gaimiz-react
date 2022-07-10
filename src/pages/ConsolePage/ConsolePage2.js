@@ -230,7 +230,7 @@ const ConsolePage2 = ({
                 <Error/> {/* <h1 className='absolute bottom-80 text-black text-2xl font-bold z-20'>IMAGE EXAMPLE</h1> */}
                 <h1 className='absolute bottom-40  left-32 text-black text-sm font-bold z-20'>
                     <FontAwesomeIcon size="m" icon="circle-exclamation"/>
-                    &nbsp; Note: Image maybe me streched that not what final product look like</h1>
+                    &nbsp; Note: Image maybe streched that not what final product look like</h1>
 
                 <ImageViewer/>
 
@@ -281,7 +281,7 @@ const ConsolePage2 = ({
 
 
 
-                                <div className=' absolute text-white bottom-1/3 -translate-y-4'>
+                                <div className=' absolute text-white bottom-1/2 md:bottom-1/3 translate-y-20 md:-translate-y-4'>
                                     <div className='flex w-full justify-between items-center'>
                                         <button
                                             type='button'

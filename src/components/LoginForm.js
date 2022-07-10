@@ -62,9 +62,9 @@ const LoginForm = (props) => {
                         className='flex flex-col justify-center items-center w-full h-full'
                         onSubmit={props.handleSubmit(onSubmit)}>
                         <div
-                            className="flex flex-col justify-center items-center mt-20 w-1/4 pt-6 pb-32 rounded-2xl bg-white drop-shadow-black relative">
-                            <h1 className="my-3 text-2xl font-semibold">CREATE AN ACCOUNT</h1>
-                            <div className="mb-3 px-10 py-2 w-full">
+                            className="flex flex-col justify-center items-center mb-20 px-40 md:px-52  mt-20 w-1/4 pt-6 py-96 rounded-2xl bg-white drop-shadow-black relative">
+                            <h1 className="my-3 text-2xl font-semibold">LOGIN</h1>
+                            <div className="absolute top-16 md:block mb-3 px-10 py-2 w-full">
                                 <label className='tracking-widest font-light'>EMAIL</label>
 
                                 <Field
@@ -76,7 +76,7 @@ const LoginForm = (props) => {
                                     validate={required}/>
                             </div>
 
-                            <div className="mb-3 px-10 py-2  w-full">
+                            <div className="absolute  top-40 md:block mb-3 px-10 py-2  w-full">
                                 <label className='tracking-widest font-light'>PASSWORD</label>
                                 <Field
                                     type='password'
@@ -87,7 +87,7 @@ const LoginForm = (props) => {
                                     validate={required}/>
                             </div>
 
-                            <div className="mt-10 px-10 pb-20 w-full">
+                            <div className="absolute bottom-16 mt-10 px-10 pb-20 w-full">
                                 <button
                                     type='submit'
                                     className=" text-white border-4 py-2 tracking-widest text-lg font-light bg-cyan-400 border-cyan-400 rounded-3xl uppercase drop-shadow-black w-full">CONTINUE</button>
