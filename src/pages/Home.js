@@ -91,7 +91,7 @@ const Home = () => {
                                 & TOURNAMENTS
                             </h1>
                             <h1
-                                className="absolute md:hidden left-1/2 -translate-x-52 text-2xl font-bold mx-20 z-10 drop-shadow-black">
+                                className="absolute md:hidden left-1/2 -translate-x-52 text-4xl font-bold mx-20 z-10 drop-shadow-black">
                                 GAMING EVENTS
                                 <br/>
                                 & TOURNAMENTS
