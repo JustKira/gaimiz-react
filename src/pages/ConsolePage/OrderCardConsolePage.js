@@ -87,7 +87,7 @@ const OrderCardLaptopPage = ({order, user, previousPage, handleSubmit}) => {
 
         return (
 
-            <div className='mx-80 my-40 px-20 pb-80 pt-10 rounded-2xl bg-black relative'>
+            <div className='mx-10 md:mx-80 my-10 nmd:my-40 px-10 md:px-20 pb-10 md:pb-80 pt-10 rounded-2xl bg-black relative'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <h1 className='text-white text-2xl font-bold my-10'>
                         Cart (Confirm your order)</h1>
