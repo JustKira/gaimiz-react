@@ -57,7 +57,7 @@ function App(props) {
 
 
   return ( 
-  <div className="bg-[url('../public/assets/background.png')] -z-50 bg-repeat">
+  <div className="bg-[url('../public/assets/background.png')] -z-50 bg-contain bg-repeat">
     <BrowserRouter>
      
       <Header />
