@@ -90,7 +90,7 @@ const CreateEvent = (props) => {
                 </div>
                 <label
                     for="image_sel"
-                    className='bg-cyan-400 mt-10 md:w-1/2 px-2 md:px-12 py-4  text-white rounded-md text-sm md:text-xl cursor-pointer'>
+                    className='bg-cyan-400 mt-10 md:w-1/2 px-2 md:px-12 py-4  text-white rounded-md text-ssm md:text-xl cursor-pointer'>
                     <Field
                         component={FileInput}
                         className="hidden"
@@ -104,7 +104,7 @@ const CreateEvent = (props) => {
                 </label>
                 <button
                     type="submit"
-                    className=' text-white border-4 my-10 py-2 px-2 md:px-12 md:w-1/2 tracking-widest text-sm md:text-lg font-light bg-cyan-400 border-cyan-400 rounded-xl md:rounded-2xl uppercase drop-shadow-black'>Add EVENT</button>
+                    className=' text-white border-4 my-10 py-2 px-2 md:px-12 md:w-1/2 tracking-widest text-ssm md:text-lg font-light bg-cyan-400 border-cyan-400 rounded-xl md:rounded-2xl uppercase drop-shadow-black'>Add EVENT</button>
             </form>
         </div>
     )

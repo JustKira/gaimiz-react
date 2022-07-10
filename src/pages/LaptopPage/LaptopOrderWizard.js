@@ -23,7 +23,6 @@ const LaptopOrderWizard = () => {
     }
     return (
         <div>
-            <img src="assets/background.png" className="fixed -top-10 -z-10"/>
             {page === 1 && (<LaptopPage1 nextPage={() => nextPage()} />)}
             {page === 2 && (<LaptopPage2 previousPage={() => previousPage()} nextPage={() => nextPage()} path={path} setPath={() => setPath()} />)}
             {page === 3 && (<LaptopDims  previousPage={() => previousPage()} nextPage={() => nextPage()} />)}

@@ -25,7 +25,7 @@ const ConsoleField = ({
             <div>
                 <input
                     {...input}
-                    className=" py-2 md:py-3 mt-3 mx-4 text-center font-bold text-slate-800 relative bg-gray-300 rounded text-sm shadow outline-none focus:outline-none focus:ring w-full"
+                    className=" py-2 md:py-3 md:mt-3 mx-4 text-center font-bold text-slate-800 relative bg-gray-300 rounded text-sm shadow outline-none focus:outline-none focus:ring w-full"
                     placeholder={placeholder}
                     type={type}/> {touched && ((error && <span className=" absolute text-white px-3 py-3 mt-3 mx-8">{error}</span>) || (warning && <span className=" absolute text-white px-3 py-3 mt-3 mx-8">{warning}</span>))}
             </div>
@@ -145,10 +145,10 @@ const ConsolePage2 = ({
                 <div
                     className='absolute  bottom-52 md:bottom-40 left-1/2 -translate-x-1/2 w-screen flex justify-evenly py-10 px-42 z-10'>
                     <img
-                        className='ml-28 h-32 md:h-80   rounded-2xl'
+                        className='ml-28  h-28 md:h-52 lg:h-80  rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/tmp/done/customProduct_console${path}_console_l.png`}/>
                     <img
-                        className='mr-28 h-32 md:h-80  rounded-2xl'
+                        className='mr-28  h-28 md:h-52 lg:h-80  rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/tmp/done/customProduct_console${path}_console_r.png`}/></div>
             )
         } else {
@@ -156,10 +156,10 @@ const ConsolePage2 = ({
                 <div
                     className='absolute bottom-52 md:bottom-40 left-1/2 -translate-x-1/2 w-screen flex justify-evenly py-10 px-42 z-10'>
                     <img
-                        className='ml-28 h-32 md:h-80  rounded-2xl'
+                        className='ml-28  h-28 md:h-52 lg:h-80 rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/products/done/product_console${imageid}_console_l.png`}/>
                     <img
-                        className='mr-28 h-32 md:h-80  rounded-2xl'
+                        className='mr-28  h-28 md:h-52 lg:h-80 rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/products/done/product_console${imageid}_console_r.png`}img/></div>
             )
         }
@@ -169,7 +169,7 @@ const ConsolePage2 = ({
     const Error = () => {
         if (error_str !== "") {
             return (
-                <h1 className='absolute text-sm md:text-base font-semibold text-white bottom-24 md:bottom-14 z-10 md:left-40 md:w-1/3 w-1/2'>
+                <h1 className='absolute text-ssm sm:text-base  md:text-base font-semibold text-white bottom-24 md:bottom-14 z-10 md:left-40 md:w-1/3 w-1/2'>
                     <FontAwesomeIcon size="m" icon="circle-exclamation"/>&nbsp; NOTE:{error_str}</h1>
             )
         } else {
@@ -179,10 +179,10 @@ const ConsolePage2 = ({
 
     return (
         <form
-            className="flex flex-col m-20 md:mx-52 justify-center items-center"
+            className="flex flex-col m-20 lg:mx-52 justify-center items-center"
             onSubmit={handleSubmit(onSubmit)}>
             <div
-                className='flex flex-col justify-center items-center px-40 bg-black pb-72 md:pb-os-flat pt-80 md:pt-96 w-full rounded-3xl relative'>
+                className='flex flex-col justify-center items-center px-40 bg-black mb-20 pb-72 md:pb-os-flat pt-80 md:pt-96 w-full rounded-3xl relative'>
 
                 <h1 className=' absolute bg-black text-white top-14 text-3xl font-bold'>CONSOLE DESIGN</h1>
 
@@ -228,7 +228,7 @@ const ConsolePage2 = ({
                 </div>
                 <Error/> {/* <h1 className='absolute bottom-80 text-black text-2xl font-bold z-20'>IMAGE EXAMPLE</h1> */}
                 <h1
-                    className='absolute bottom-48 md:bottom-40  md:left-32 text-black text-sm font-bold z-20'>
+                    className='absolute bottom-48 md:bottom-40  md:left-32 text-black text-ssm md:text-sm font-bold z-20'>
                     <FontAwesomeIcon size="m" icon="circle-exclamation"/>
                     &nbsp; Note: Image maybe streched that not what final product look like</h1>
 
@@ -246,7 +246,7 @@ const ConsolePage2 = ({
                             <div className='flex my-32 w-full justify-between items-center'>
 
                                 <div className='flex flex-col pr-5 lg:pr-52 justify-between items-center'>
-                                    <h1 className='text-white my-3 font-bold text-2xl uppercase'>Body</h1>
+                                    <h1 className='text-white my-3 font-bold text-base md:text-2xl uppercase'>Body</h1>
                                     <div
                                         className='bg-cyan-400 text-white px-12 md:px-24 py-4 md:py-6 rounded-md flex justify-center items-center relative'>
                                         <label>
@@ -263,18 +263,18 @@ const ConsolePage2 = ({
                                         </label>
                                     </div>
                                     <h1
-                                        className='bg-white rounded-md my-3 px-4 md:px-8 py-1 md:py-2 text-black text-2xl'>200L.E</h1>
+                                        className='bg-white rounded-md my-3 px-4 md:px-8 py-1 md:py-2 text-black text-sm md:text-2xl'>200L.E</h1>
                                 </div>
 
-                                <div className='flex flex-col pl-5 lg:pl-52  justify-between items-center'>
-                                    <h1 className='text-white my-3 font-bold text-2xl uppercase'>Controller</h1>
+                                <div className='flex flex-col pl-5 lg:pl-52 justify-between items-center'>
+                                    <h1 className='text-white my-3 font-bold text-base md:text-2xl uppercase'>Controller</h1>
 
                                     <div className='flex justify-center items-center pr-9'>
                                         <Field component={ConsoleField} type="number" id="control" name="control"/>
                                     </div>
 
                                     <h1
-                                        className='bg-white rounded-md my-3 px-8 py-2 text-ssm text-black md:text-xl text-center'>75 L.E FORE EACH</h1>
+                                        className='bg-white rounded-md my-3 px-1 md:px-10 py-2 text-ssm md:text-sm text-black lg:text-xl text-center'>75 L.E FORE EACH</h1>
                                 </div>
 
                                 <div
@@ -290,7 +290,7 @@ const ConsolePage2 = ({
                                         {customImage
                                             ? <label
                                                     for="custom_image_sel"
-                                                    className='text-ssm md:text-base translate-y-7 left-10 z-50 absolute md:static mx-32 px-8 md:px-12 py-1 md:py-2 text-xl cursor-pointer rounded-2xl border-2 border-white md:border-0'>
+                                                    className='text-ssm md:text-base translate-y-7  md:translate-x-1/2 lg:translate-x-72 left-8 md:left-3/4 z-50 absolute  mx-32 px-8 lg:px-10 py-1 md:py-2 text-xl cursor-pointer rounded-2xl border-2 border-white md:border-0'>
                                                     <Field
                                                         component={FileInput}
                                                         className="hidden"
@@ -317,16 +317,16 @@ const ConsolePage2 = ({
 
                 <button
                     type="submit"
-                    className='absolute text-white right-10 md:right-20 bottom-10 border-4 px-8 md:px-12 py-2 tracking-widest text-sm  md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black'>
+                    className='absolute text-white right-10 md:right-12 lg:right-20 bottom-10 border-4 px-8 md:px-12 py-2 tracking-widest text-sm  md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black'>
                     Next
                 </button>
                 <button
                     onClick={() => previousPage()}
-                    className='absolute text-white left-10 md:left-120 md:translate-x-96 bottom-10 border-4  px-8 md:px-12 py-2 tracking-widest text-sm md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black '>
+                    className='absolute text-white left-10 md:left-12  xl:left-120 xl:translate-x-96 bottom-10 border-4  px-8 md:px-12 py-2 tracking-widest text-sm md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black '>
                     Back
                 </button>
                 <div
-                    className=' absolute bottom-48 md:bottom-32 h-52 pb-52 md:py-60 -left-72 overflow bg-white w-fill-all text-black text-4xl font-semibold self-center text-center '></div>
+                    className=' absolute bottom-48 md:bottom-32 h-52 pb-52 md:py-60 lg:-left-72 overflow bg-white w-fill-all text-black text-4xl font-semibold self-center text-center '></div>
             </div>
 
         </form>

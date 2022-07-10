@@ -37,16 +37,20 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
 
     return (
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-            <div className='mx-40 my-40 px-20 py-80 rounded-2xl bg-black relative'>
+            <div
+                className='mx-10 xl:mx-40 my-40 px-4 xl:px-20 py-30 md:py-60 g:py-80 rounded-2xl bg-black relative'>
 
-                <h1 className=' absolute left-6 top-10 font-bold text-2xl text-white'>
+                <h1 className=' absolute left-6 top-10 font-bold md:text-2xl lg:text-3xl text-white'>
                     LAPTOP DIMENSIONS</h1>
-                <div className='flex flex-col justify-center items-center'>
                     <VideoHolder text="BEFORE MEASURING, PLEASE WATCH THIS"/>
 
-                    <div className='flex mt-20 mx-20 w-full px-20 items-center'>
-                        <h1 className='text-white text-3xl font-semibold text-center mr-20'>BACK</h1>
-                        <div className='ml-10'>
+                <div className='flex flex-col justify-center items-center'>
+                    
+                    <div
+                        className='flex flex-col lg:flex-row mt-20 md:mx-20 w-full md:px-20 lg:items-center'>
+                        <h1
+                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>BACK</h1>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -54,7 +58,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                                 placeholder="LENGTH"
                                 validate={required}/>
                         </div>
-                        <div className='ml-10'>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -63,11 +67,11 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                                 validate={required}/>
                         </div>
                     </div>
-
-                    <div className='flex mt-20 w-full px-20 items-center'>
-                        <h1 className='text-white text-3xl font-semibold text-center'>KEYBOARD</h1>
-
-                        <div className='ml-10'>
+                    <div
+                        className='flex flex-col lg:flex-row mt-20 md:mx-20 w-full md:px-20 lg:items-center'>
+                        <h1
+                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>KEYBOARD</h1>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -75,7 +79,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                                 placeholder="LENGTH"
                                 validate={required}/>
                         </div>
-                        <div className='ml-10'>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -85,11 +89,15 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                         </div>
                     </div>
 
-                    <h1 className='mt-20 text-white text-3xl font-semibold text-center'> NOT REQUIRED </h1>
+                    <h1 className='mt-20 text-white text-3xl font-semibold text-center'>
+                        NOT REQUIRED
+                    </h1>
                     {/* Other1 */}
-                    <div className='flex mt-20 w-full px-20 items-center'>
-                        <h1 className='text-white text-3xl font-semibold text-center'>OTHER 1</h1>
-                        <div className=' ml-36'>
+                    <div
+                        className='flex flex-col lg:flex-row mt-20 md:mx-20 w-full md:px-20 lg:items-center'>
+                        <h1
+                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>OTHER 1</h1>
+                        <div className=' md:ml-36'>
                             <Field
                                 component={ReduxSelect}
                                 type="text"
@@ -102,7 +110,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                                 <option value="FINGER_PRINT">Finger Print</option>
                             </Field>
                         </div>
-                        <div className='ml-12'>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -110,7 +118,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                                 placeholder="LENGTH"
                                 validate=""/>
                         </div>
-                        <div className='ml-12'>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -120,9 +128,11 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                         </div>
                     </div>
                     {/* Other2 */}
-                    <div className='flex mt-20 w-full px-20 items-center'>
-                        <h1 className='text-white text-3xl font-semibold text-center'>OTHER 2</h1>
-                        <div className=' ml-36'>
+                    <div
+                        className='flex flex-col lg:flex-row mt-20 md:mx-20 w-full md:px-20 lg:items-center'>
+                        <h1
+                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>OTHER 2</h1>
+                        <div className=' md:ml-36'>
                             <Field
                                 component={ReduxSelect}
                                 type="text"
@@ -135,7 +145,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                                 <option value="FINGER_PRINT">Finger Print</option>
                             </Field>
                         </div>
-                        <div className='ml-12'>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -143,7 +153,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                                 placeholder="LENGTH"
                                 validate=""/>
                         </div>
-                        <div className='ml-12'>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -153,9 +163,11 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                         </div>
                     </div>
                     {/* Other3 */}
-                    <div className='flex mt-20 w-full px-20 items-center'>
-                        <h1 className='text-white text-3xl font-semibold text-center'>OTHER 3</h1>
-                        <div className=' ml-36'>
+                    <div
+                        className='flex flex-col lg:flex-row mt-20 md:mx-20 w-full md:px-20 lg:items-center'>
+                        <h1
+                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>OTHER 3</h1>
+                        <div className='md:ml-36'>
                             <Field
                                 component={ReduxSelect}
                                 type="text"
@@ -168,7 +180,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                                 <option value="FINGER_PRINT">Finger Print</option>
                             </Field>
                         </div>
-                        <div className='ml-12'>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -176,7 +188,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                                 placeholder="LENGTH"
                                 validate=""/>
                         </div>
-                        <div className='ml-12'>
+                        <div className='sm:ml-36 lg:ml-12'>
                             <Field
                                 component={ReduxField}
                                 type="number"
@@ -188,12 +200,12 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
 
                     <button
                         type="submit"
-                        className='absolute text-white right-20 bottom-10 border-4 px-12 py-2 tracking-widest text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black'>
+                        className='absolute text-white right-5 sm:right-10 md:right-20 bottom-10 border-4 px-8 md:px-12 py-2 tracking-widest text-sm md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black'>
                         Next
                     </button>
                     <button
                         onClick={() => previousPage()}
-                        className='absolute text-white right-60 bottom-10 border-4 px-12 py-2 tracking-widest text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black '>
+                        className='absolute text-white right-40 sm:right-48 md:right-60 bottom-10 border-4  px-8 md:px-12  py-2 tracking-widest  text-sm md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black '>
                         Back
                     </button>
                 </div>
