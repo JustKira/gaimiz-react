@@ -145,10 +145,10 @@ const ConsolePage2 = ({
                 <div
                     className='absolute  bottom-52 md:bottom-40 left-1/2 -translate-x-1/2 w-screen flex justify-evenly py-10 px-42 z-10'>
                     <img
-                        className='ml-32 h-32 md:h-80   rounded-2xl'
+                        className='ml-28 h-32 md:h-80   rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/tmp/done/customProduct_console${path}_console_l.png`}/>
                     <img
-                        className='mr-32 h-32 md:h-80  rounded-2xl'
+                        className='mr-28 h-32 md:h-80  rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/tmp/done/customProduct_console${path}_console_r.png`}/></div>
             )
         } else {
@@ -156,10 +156,10 @@ const ConsolePage2 = ({
                 <div
                     className='absolute bottom-52 md:bottom-40 left-1/2 -translate-x-1/2 w-screen flex justify-evenly py-10 px-42 z-10'>
                     <img
-                        className='ml-32 h-32 md:h-80  rounded-2xl'
+                        className='ml-28 h-32 md:h-80  rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/products/done/product_console${imageid}_console_l.png`}/>
                     <img
-                        className='mr-32 h-32 md:h-80  rounded-2xl'
+                        className='mr-28 h-32 md:h-80  rounded-2xl'
                         src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/products/done/product_console${imageid}_console_r.png`}img/></div>
             )
         }

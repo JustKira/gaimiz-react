@@ -3,6 +3,7 @@ import LogoPage1 from '../LogoPage1'
 
 import ConsolePage1 from './ConsolePage1'
 import ConsolePage2 from './ConsolePage2'
+import LogoPageConsole from './LogoPageConsole'
 import OrderCardConsolePage from './OrderCardConsolePage'
 
 const LaptopOrderWizard = () => {
@@ -26,7 +27,7 @@ const LaptopOrderWizard = () => {
 
             {page === 1 && (<ConsolePage1 nextPage={() => nextPage()} />)}
             {page === 2 && (<ConsolePage2 previousPage={() => previousPage()} nextPage={() => nextPage()} path={path} setPath={() => setPath()} />)}
-            {page === 3 && (<LogoPage1  previousPage={() => previousPage()} nextPage={() => nextPage() } path={path}/>)}
+            {page === 3 && (<LogoPageConsole  previousPage={() => previousPage()} nextPage={() => nextPage() } path={path}/>)}
             {page === 4 && (<OrderCardConsolePage  previousPage={() => previousPage()}/>)}
         </div>
     )
