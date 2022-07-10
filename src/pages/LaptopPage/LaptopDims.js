@@ -38,7 +38,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
     return (
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
             <div
-                className='mx-10 xl:mx-40 my-40 px-4 xl:px-20 py-30 md:py-60 g:py-80 rounded-2xl bg-black relative'>
+                className='mx-10 xl:mx-40 my-40 px-4 xl:px-20 py-32 md:py-60 lg:py-80 rounded-2xl bg-black relative'>
 
                 <h1 className=' absolute left-6 top-10 font-bold md:text-2xl lg:text-3xl text-white'>
                     LAPTOP DIMENSIONS</h1>
@@ -96,7 +96,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                     <div
                         className='flex flex-col lg:flex-row mt-20 md:mx-20 w-full md:px-20 lg:items-center'>
                         <h1
-                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>OTHER 1</h1>
+                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20 text-ellipsis'>OTHER:1</h1>
                         <div className=' md:ml-36'>
                             <Field
                                 component={ReduxSelect}
@@ -131,7 +131,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                     <div
                         className='flex flex-col lg:flex-row mt-20 md:mx-20 w-full md:px-20 lg:items-center'>
                         <h1
-                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>OTHER 2</h1>
+                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>OTHER:2</h1>
                         <div className=' md:ml-36'>
                             <Field
                                 component={ReduxSelect}
@@ -166,7 +166,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
                     <div
                         className='flex flex-col lg:flex-row mt-20 md:mx-20 w-full md:px-20 lg:items-center'>
                         <h1
-                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>OTHER 3</h1>
+                            className='text-white text-base md:text-3xl font-semibold text-center mr-80 lg:mr-20'>OTHER:3</h1>
                         <div className='md:ml-36'>
                             <Field
                                 component={ReduxSelect}
