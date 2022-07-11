@@ -36,7 +36,7 @@ const OrderCardLaptopPage = ({order, user, previousPage, handleSubmit}) => {
 
         let path = localStorage.getItem('image_Path')
         console.log(path)
-        if (path === undefined || path === "undefined") {
+        if (path === undefined || path === "") {
             formValues.customimage = "false"
             let values = JSON.stringify(formValues)
             OrderSend(user, values, 0)

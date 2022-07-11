@@ -37,14 +37,19 @@ function App(props) {
 
   useEffect(()=> {
     props.getEvents()
-    props.refreshTokenAction()
     localStorage.removeItem("image_Path")
+
+    if(props.accessToken != null){
+      props.getEvents()
+      props.refreshTokenAction()
+
+  }
   }, [])
 
   useEffect(() => {
     let fourMin = 1000 * 60 * 4
     let interval = setInterval(() => {
-            if(props.accessToken){
+            if(props.accessToken != null){
                 props.refreshTokenAction()
                 props.getUserAction()
                 console.log("refresh")
