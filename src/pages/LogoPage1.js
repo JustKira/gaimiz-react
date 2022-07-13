@@ -7,8 +7,9 @@ import {compose} from 'redux'
 const LogoPage1 = ({nextPage, previousPage, order}) => {
     return (
         <div>
-            <div className="row black-body">
-                <LogoSelect>
+            <div className="w-full flex justify-center items-center">
+<div className='bg-black h-full px-20 my-10'>
+<LogoSelect>
                     <button
                         onClick={() => previousPage()}
                         className=' text-white m-2 mt-10 left-10 bottom-10 border-4  px-8 md:px-12 py-2 tracking-widest text-sm md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black '>
@@ -21,6 +22,7 @@ const LogoPage1 = ({nextPage, previousPage, order}) => {
                     </button>
 
                 </LogoSelect>
+</div>
             </div>
         </div>
     )

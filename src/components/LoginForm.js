@@ -57,9 +57,8 @@ const LoginForm = (props) => {
         return (
             <div>
                 <div>
-                    <img src="assets/background.png" className="fixed -top-10 -z-10"/>
                     <form
-                        className='flex flex-col justify-center items-center w-full h-full'
+                        className='flex flex-col justify-center items-center w-full h-screen'
                         onSubmit={props.handleSubmit(onSubmit)}>
                         <div
                             className="flex flex-col justify-center items-center mb-20 px-40 md:px-52  mt-20 w-1/4 pt-6 py-96 rounded-2xl bg-white drop-shadow-black relative">
@@ -111,7 +110,6 @@ const LoginForm = (props) => {
         return (
 
             <div className="w-full h-screen flex justify-center items-center">
-                <img src="assets/background.png" className="fixed -top-10 -z-10"/>
                 <div
                     className="flex flex-col h-1/2 justify-center items-center mt-20 w-1/2 pt-6 pb-12 rounded-xl bg-white drop-shadow-black relative">
                     <h1 className=' capitalize text-2xl'>

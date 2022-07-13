@@ -31,11 +31,11 @@ export const refreshTokenAction = () => async (dispatch,getState) => {
         headers:{
             'Content-Type':'application/json'
         },
-        body:JSON.stringify({'refresh':getState().auth.state.refresh})
+        body:JSON.stringify({'refresh': getState().auth.state.refresh})
     })
     let data = await response.json()
-
-    var finalreq = {"refresh":getState().auth.state.refresh , "access":data.access} 
+    console.log(data)
+    var finalreq = {"refresh":getState().auth.state.refresh , "access":data.access,"code":data.code,"detail":data.detail} 
 
     dispatch({type: 'TOKEN_REFRESH', payload : finalreq})
 }
@@ -47,6 +47,7 @@ export const getUserAction = () => async (dispatch,getState) => {
     let response = await fetch(`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/api/user/${access.user_id}`,{
         method:'GET',
         headers:{
+            'Authorization': 'Bearer ' + getState().auth.state.access,
             'Content-Type':'application/json',
         }
     })

@@ -26,7 +26,7 @@ const Header = ({user}) => {
 
                 <li>
                     <Link to="/">
-                        <img src="assets/logo.PNG" alt="Logo" className=" lg:w-16 md:w-12 w-24 py-2"/>
+                        <img src="assets/logo.PNG" alt="Logo" className=" lg:w-24 md:w-18 w-24 py-2"/>
                     </Link>
                 </li>
             </ul>
@@ -39,14 +39,14 @@ const IsUser = ({user}) => {
         return (
             <div>
                 <Link to="/profile">
-                    <h>{user.state.username}</h>
+                    <h1>{user.state.username}</h1>
                 </Link>
             </div>
         )
     } else {
         return (
             <Link to="/login">
-                <h>Login</h>
+                <h1>Login</h1>
             </Link>
         )
     }

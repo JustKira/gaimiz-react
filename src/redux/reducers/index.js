@@ -10,7 +10,7 @@ import eventReducer from "./eventReducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["auth", "user"],
+  whitelist: ["auth"],
 };
 
 const rootReducer = combineReducers({
