@@ -4,6 +4,8 @@ function userReducer(state = { state : null}, action){
           return { ...state, state : action.payload }
         case 'USER_LOGOUT':
           return { ...state, state : null }
+        case 'CLEAR_USER_DATA':
+          return { ...state, state : null }
         default:
           return state
     }

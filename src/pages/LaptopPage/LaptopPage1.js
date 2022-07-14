@@ -71,6 +71,7 @@ export default reduxForm({
     initialValues: {
         keyboard: false,
         back: false,
+        order_type: 'laptop',
         customimage:"False",
         other1: "empty",
         other1_dims_x: 0,
@@ -80,7 +81,8 @@ export default reduxForm({
         other2_dims_y: 0,
         other3: "empty",
         other3_dims_x: 0,
-        other3_dims_y: 0
+        other3_dims_y: 0,
+        withLogo : true
     }
 })(LaptopPage1)
 

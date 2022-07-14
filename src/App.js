@@ -1,15 +1,12 @@
 import './App.css';
 import './settings.css';
 import './Grid.css';
-import WhiteBanner from './components/WhiteBanner';
-import VideoHolder from './components/VideoHolder';
+
 import Footer from './components/Footer';
 import Header from './components/Header';
 
 import {BrowserRouter, Routes, Route, useNavigate} from "react-router-dom";
 
-import ConsolePage1 from './pages/ConsolePage1';
-import LogoPage1 from './pages/LogoPage1';
 import ConsoleOrderWizard from './pages/ConsolePage/ConsoleOrderWizard';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
@@ -21,13 +18,14 @@ import ProfilePage from './pages/ProfilePage';
 import AdminPage from './pages/AdminPages/AdminPage';
 import {useEffect} from 'react';
 import {connect} from 'react-redux';
-import {refreshTokenAction, getUserAction, getEvents} from './redux/actions';
+import {refreshTokenAction, getUserAction, getEvents,clearUserData} from './redux/actions';
 
 import {library} from '@fortawesome/fontawesome-svg-core'
-import {faChevronLeft, faChevronRight, faShoppingCart, faUpload, faCircleExclamation} from '@fortawesome/free-solid-svg-icons'
+import {faChevronLeft, faChevronRight, faShoppingCart, faUpload, faCircleExclamation ,faCircleXmark} from '@fortawesome/free-solid-svg-icons'
 import CartPage from './pages/Users/CartPage';
+import ResponseWButton from './pages/Ress/ResponseWButton';
 
-library.add(faChevronLeft, faChevronRight, faShoppingCart, faUpload, faCircleExclamation)
+library.add(faChevronLeft, faChevronRight, faShoppingCart, faUpload, faCircleExclamation,faCircleXmark)
 
 function App(props) {
 
@@ -38,21 +36,26 @@ function App(props) {
         localStorage.removeItem("image_Path")
 
         if (props.code === "token_not_valid") {
-            return navigate('token-invalid')
+            props.clearUserData()
+            return <ResponseWButton buttonfunc={()=>{navigate('login')}} buttontext="Login" head='Session Expired' info='Token is invalid or expired Please Login again '/>
         }
         props.refreshTokenAction()
-        props.getUserAction()
 
     }, [])
 
     useEffect(() => {
         let fourMin = 1000 * 60 * 4
         let interval = setInterval(() => {
+            if (props.code === "token_not_valid") {
+                props.clearUserData()
+                return <ResponseWButton buttonfunc={()=>{navigate('login')}} buttontext="Login" head='Session Expired' info='Token is invalid or expired Please Login again '/>
+            }
             if (props.accessToken != null) {
                 props.refreshTokenAction()
                 props.getUserAction()
                 console.log("refresh")
             }
+            
         }, fourMin);
 
         return () => clearInterval(interval)
@@ -61,7 +64,8 @@ function App(props) {
 
     return (
         <div
-            className="bg-[url('../public/assets/background.png')] bg-fixed -z-50 bg-cover bg-center">
+            className="">
+                <div className=" fixed bg-[url('../public/assets/background.png')] -z-50 bg-cover bg-center w-screen h-screen"></div>
                 <Header/>
                 <Routes>
                 <Route path="/" element={< Home />}/>
@@ -99,5 +103,5 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
     refreshTokenAction,
     getUserAction,
-    getEvents
+    getEvents,clearUserData
 },)(App)

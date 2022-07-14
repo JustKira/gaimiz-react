@@ -169,7 +169,8 @@ const ConsolePage2 = ({
     const Error = () => {
         if (error_str !== "") {
             return (
-                <h1 className='absolute text-ssm sm:text-base  md:text-base font-semibold text-white bottom-24 md:bottom-14 z-10 md:left-40 md:w-1/3 w-1/2'>
+                <h1
+                    className='absolute text-ssm sm:text-base  md:text-base font-semibold text-white bottom-24 md:bottom-14 z-10 md:left-40 md:w-1/3 w-1/2'>
                     <FontAwesomeIcon size="m" icon="circle-exclamation"/>&nbsp; NOTE:{error_str}</h1>
             )
         } else {
@@ -178,158 +179,160 @@ const ConsolePage2 = ({
     }
 
     return (
-        <form
-            className="flex flex-col m-20 lg:mx-52 justify-center items-center"
-            onSubmit={handleSubmit(onSubmit)}>
-            <div
-                className='flex flex-col justify-center items-center px-40 bg-black mb-20 pb-72 md:pb-os-flat pt-80 md:pt-96 w-full rounded-3xl relative'>
-
-                <h1 className=' absolute bg-black text-white top-14 text-3xl font-bold'>CONSOLE DESIGN</h1>
-
+        <div className='h-full py-10'>
+            <form
+                className="flex flex-col m-20 lg:mx-52 justify-center items-center"
+                onSubmit={handleSubmit(onSubmit)}>
                 <div
-                    className='absolute left-0 top-80 w-full flex justify-between items-center z-10 '>
-                    <span
-                        className=' cursor-pointer bg-none duration-200 ease-in hover:bg-slate-300 px-3 rounded-full'>
-                        <FontAwesomeIcon
-                            size="4x"
-                            icon="chevron-left"
-                            onClick={() => {
-                            prevImage()
-                        }}/>
+                    className='flex flex-col justify-center items-center px-40 bg-black mb-20 pb-72 md:pb-os-flat pt-80 md:pt-96 w-full rounded-3xl relative'>
 
-                    </span>
-                    <Field
-                        component="input"
-                        className='hidden'
-                        type="radio"
-                        id="image-input"
-                        name="modelimage"
-                        value=''/>
-                    <label for="image-input">
-                        <img
-                            className='h-32 md:h-80'
-                            src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/products/raw/product${imageid}.png`}/>
-
-                        <h1 className='text-2xl text-center mt-2 font-semibold'>
-                            {imageid + 1}/{images_list.list}
-                        </h1>
-                    </label>
-                    <span
-                        className='cursor-pointer bg-none duration-200 ease-in hover:bg-slate-300 px-3 rounded-full'>
-                        <FontAwesomeIcon
-                            size="4x"
-                            icon="chevron-right"
-                            onClick={() => {
-                            nextImage()
-                        }}/>
-
-                    </span>
-
-                </div>
-                <Error/> {/* <h1 className='absolute bottom-80 text-black text-2xl font-bold z-20'>IMAGE EXAMPLE</h1> */}
-                <h1
-                    className='absolute bottom-48 md:bottom-40  md:left-32 text-black text-ssm md:text-sm font-bold z-20'>
-                    <FontAwesomeIcon size="m" icon="circle-exclamation"/>
-                    &nbsp; Note: Image maybe streched that not what final product look like</h1>
-
-                <ImageViewer/>
-
-                <div>
+                    <h1 className=' absolute bg-black text-white top-14 text-3xl font-bold'>CONSOLE DESIGN</h1>
 
                     <div
-                        className=' absolute top-64 h-20 md:h-52 py-32 md:py-60 -left-72 overflow bg-white w-fill-all text-black text-4xl font-semibold self-center text-center '></div>
+                        className='absolute left-0 top-80 w-full flex justify-between items-center z-10 '>
+                        <span
+                            className=' cursor-pointer bg-none duration-200 ease-in hover:bg-slate-300 px-3 rounded-full'>
+                            <FontAwesomeIcon
+                                size="4x"
+                                icon="chevron-left"
+                                onClick={() => {
+                                prevImage()
+                            }}/>
 
-                    <div
-                        className='flex w-full bg-black pb-20 justify-between items-center my-0 mb-20 md:my-20 pt-20 md:pt-80'>
+                        </span>
+                        <Field
+                            component="input"
+                            className='hidden'
+                            type="radio"
+                            id="image-input"
+                            name="modelimage"
+                            value=''/>
+                        <label for="image-input">
+                            <img
+                                className='h-32 md:h-80'
+                                src={`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/media/products/raw/product${imageid}.png`}/>
 
-                        <div className='w-full '>
-                            <div className='flex my-32 w-full justify-between items-center'>
+                            <h1 className='text-2xl text-center mt-2 font-semibold'>
+                                {imageid + 1}/{images_list.list}
+                            </h1>
+                        </label>
+                        <span
+                            className='cursor-pointer bg-none duration-200 ease-in hover:bg-slate-300 px-3 rounded-full'>
+                            <FontAwesomeIcon
+                                size="4x"
+                                icon="chevron-right"
+                                onClick={() => {
+                                nextImage()
+                            }}/>
 
-                                <div className='flex flex-col pr-5 lg:pr-52 justify-between items-center'>
-                                    <h1 className='text-white my-3 font-bold text-base md:text-2xl uppercase'>Body</h1>
-                                    <div
-                                        className='bg-cyan-400 text-white px-12 md:px-24 py-4 md:py-6 rounded-md flex justify-center items-center relative'>
-                                        <label>
-                                            <Field
-                                                component="input"
-                                                type="checkbox"
-                                                className=' hidden'
-                                                id="body"
-                                                name="body"/> {formV.body
-                                                ? <span
-                                                        className='absolute cursor-pointer  top-1/2 left-1/2 -translate-x-1/2 text-sm md:text-base  -translate-y-1/2 font-semibold'>REMOVE</span>
-                                                : <span
-                                                    className='absolute cursor-pointer top-1/2 left-1/2 -translate-x-1/2 text-sm md:text-base  -translate-y-1/2  font-semibold'>ADD</span>}
-                                        </label>
-                                    </div>
-                                    <h1
-                                        className='bg-white rounded-md my-3 px-4 md:px-8 py-1 md:py-2 text-black text-sm md:text-2xl'>200L.E</h1>
-                                </div>
-
-                                <div className='flex flex-col pl-5 lg:pl-52 justify-between items-center'>
-                                    <h1 className='text-white my-3 font-bold text-base md:text-2xl uppercase'>Controller</h1>
-
-                                    <div className='flex justify-center items-center pr-9'>
-                                        <Field component={ConsoleField} type="number" id="control" name="control"/>
-                                    </div>
-
-                                    <h1
-                                        className='bg-white rounded-md my-3 px-1 md:px-10 py-2 text-ssm md:text-sm text-black lg:text-xl text-center'>75 L.E FORE EACH</h1>
-                                </div>
-
-                                <div
-                                    className=' absolute text-white bottom-1/2 md:bottom-1/3 translate-y-52 md:-translate-y-4'>
-                                    <div className='flex w-full justify-between items-center'>
-                                        <button
-                                            type='button'
-                                            onClick={() => setCustomImage(!customImage)}
-                                            className='text-white border-4 px-4 md:px-12 py-1 md:py-2 tracking-widest text-center font-semibold z-10 text-ssm md:text-lg bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black w-3/4 md:w-full '>
-                                            Custom Upload
-                                        </button>
-
-                                        {customImage
-                                            ? <label
-                                                    for="custom_image_sel"
-                                                    className='text-ssm md:text-base translate-y-7  md:translate-x-1/2 lg:translate-x-72 left-8 md:left-3/4 z-50 absolute  mx-32 px-8 lg:px-10 py-1 md:py-2 text-xl cursor-pointer rounded-2xl border-2 border-white md:border-0'>
-                                                    <Field
-                                                        component={FileInput}
-                                                        className="hidden"
-                                                        id="custom_image_sel"
-                                                        name="customimage"
-                                                        onChange={(e) => SendCustomImage(e)}
-                                                        value={`customProduct.png`}/>
-                                                    <span className='mr-5'>
-                                                        <FontAwesomeIcon size="xl" icon="upload"/>
-                                                    </span>
-                                                    SELECT IMAGE
-                                                </label>
-                                            : <div></div>}
-
-                                    </div>
-                                    <h1 className='ml-2 mt-4 capitalize'>Upload your image</h1>
-
-                                </div>
-                            </div>
-                        </div>
+                        </span>
 
                     </div>
+                    <Error/> {/* <h1 className='absolute bottom-80 text-black text-2xl font-bold z-20'>IMAGE EXAMPLE</h1> */}
+                    <h1
+                        className='absolute bottom-48 md:bottom-40  md:left-32 text-black text-ssm md:text-sm font-bold z-20'>
+                        <FontAwesomeIcon size="m" icon="circle-exclamation"/>
+                        &nbsp; Note: Image maybe streched that not what final product look like</h1>
+
+                    <ImageViewer/>
+
+                    <div>
+
+                        <div
+                            className=' absolute top-64 h-20 md:h-52 py-32 md:py-60 -left-72 overflow bg-white w-fill-all text-black text-4xl font-semibold self-center text-center '></div>
+
+                        <div
+                            className='flex w-full bg-black pb-20 justify-between items-center my-0 mb-20 md:my-20 pt-20 md:pt-80'>
+
+                            <div className='w-full '>
+                                <div className='flex my-32 w-full justify-between items-center'>
+
+                                    <div className='flex flex-col pr-5 lg:pr-52 justify-between items-center'>
+                                        <h1 className='text-white my-3 font-bold text-base md:text-2xl uppercase'>Body</h1>
+                                        <div
+                                            className='bg-cyan-400 text-white px-12 md:px-24 py-4 md:py-6 rounded-md flex justify-center items-center relative'>
+                                            <label>
+                                                <Field
+                                                    component="input"
+                                                    type="checkbox"
+                                                    className=' hidden'
+                                                    id="body"
+                                                    name="body"/> {formV.body
+                                                    ? <span
+                                                            className='absolute cursor-pointer  top-1/2 left-1/2 -translate-x-1/2 text-sm md:text-base  -translate-y-1/2 font-semibold'>REMOVE</span>
+                                                    : <span
+                                                        className='absolute cursor-pointer top-1/2 left-1/2 -translate-x-1/2 text-sm md:text-base  -translate-y-1/2  font-semibold'>ADD</span>}
+                                            </label>
+                                        </div>
+                                        <h1
+                                            className='bg-white rounded-md my-3 px-4 md:px-8 py-1 md:py-2 text-black text-sm md:text-2xl'>200L.E</h1>
+                                    </div>
+
+                                    <div className='flex flex-col pl-5 lg:pl-52 justify-between items-center'>
+                                        <h1 className='text-white my-3 font-bold text-base md:text-2xl uppercase'>Controller</h1>
+
+                                        <div className='flex justify-center items-center pr-9'>
+                                            <Field component={ConsoleField} type="number" id="control" name="control"/>
+                                        </div>
+
+                                        <h1
+                                            className='bg-white rounded-md my-3 px-1 md:px-10 py-2 text-ssm md:text-sm text-black lg:text-xl text-center'>75 L.E FORE EACH</h1>
+                                    </div>
+
+                                    <div
+                                        className=' absolute text-white bottom-1/2 md:bottom-1/3 translate-y-52 md:-translate-y-4'>
+                                        <div className='flex w-full justify-between items-center'>
+                                            <button
+                                                type='button'
+                                                onClick={() => setCustomImage(!customImage)}
+                                                className='text-white border-4 px-4 md:px-12 py-1 md:py-2 tracking-widest text-center font-semibold z-10 text-ssm md:text-lg bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black w-3/4 md:w-full '>
+                                                Custom Upload
+                                            </button>
+
+                                            {customImage
+                                                ? <label
+                                                        for="custom_image_sel"
+                                                        className='text-ssm md:text-base translate-y-7  md:translate-x-1/2 lg:translate-x-72 left-8 md:left-3/4 z-50 absolute  mx-32 px-8 lg:px-10 py-1 md:py-2 text-xl cursor-pointer rounded-2xl border-2 border-white md:border-0'>
+                                                        <Field
+                                                            component={FileInput}
+                                                            className="hidden"
+                                                            id="custom_image_sel"
+                                                            name="customimage"
+                                                            onChange={(e) => SendCustomImage(e)}
+                                                            value={`customProduct.png`}/>
+                                                        <span className='mr-5'>
+                                                            <FontAwesomeIcon size="xl" icon="upload"/>
+                                                        </span>
+                                                        SELECT IMAGE
+                                                    </label>
+                                                : <div></div>}
+
+                                        </div>
+                                        <h1 className='ml-2 mt-4 capitalize'>Upload your image</h1>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button
+                        type="submit"
+                        className='absolute text-white right-10 md:right-12 lg:right-20 bottom-10 border-4 px-8 md:px-12 py-2 tracking-widest text-sm  md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black'>
+                        Next
+                    </button>
+                    <button
+                        onClick={() => previousPage()}
+                        className='absolute text-white left-10 md:left-12  xl:left-120 xl:translate-x-96 bottom-10 border-4  px-8 md:px-12 py-2 tracking-widest text-sm md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black '>
+                        Back
+                    </button>
+                    <div
+                        className=' absolute bottom-48 md:bottom-32 h-52 pb-52 md:py-60 lg:-left-72 overflow bg-white w-fill-all text-black text-4xl font-semibold self-center text-center '></div>
                 </div>
 
-                <button
-                    type="submit"
-                    className='absolute text-white right-10 md:right-12 lg:right-20 bottom-10 border-4 px-8 md:px-12 py-2 tracking-widest text-sm  md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black'>
-                    Next
-                </button>
-                <button
-                    onClick={() => previousPage()}
-                    className='absolute text-white left-10 md:left-12  xl:left-120 xl:translate-x-96 bottom-10 border-4  px-8 md:px-12 py-2 tracking-widest text-sm md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black '>
-                    Back
-                </button>
-                <div
-                    className=' absolute bottom-48 md:bottom-32 h-52 pb-52 md:py-60 lg:-left-72 overflow bg-white w-fill-all text-black text-4xl font-semibold self-center text-center '></div>
-            </div>
-
-        </form>
+            </form>
+        </div>
     )
 }
 

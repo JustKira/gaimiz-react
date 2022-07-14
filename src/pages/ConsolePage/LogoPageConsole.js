@@ -3,57 +3,82 @@ import {Field, reduxForm} from 'redux-form'
 import {connect} from 'react-redux';
 import {compose} from 'redux'
 
-const LogoPageConsole = ({nextPage, previousPage}) => {
+const LogoPageConsole = ({nextPage, previousPage, handleSubmit, formV}) => {
+    
+    const onSubmit = () => {
+        nextPage()
+    }
+
+    const WO = () => {
+        if (formV.withLogo === "true") {
+            return <h4 className='mt-4'>WITHOUT LOGO PRINTED ON SKIN</h4>
+        } else {
+            return <h4 className='mt-4 text-cyan-400'>WITHOUT LOGO PRINTED ON SKIN</h4>
+        }
+    }
+    const W = () => {
+        if (formV.withLogo === "true") {
+            return <h4 className='mt-4 text-cyan-400'>WITH LOGO PRINTED ON SKIN</h4>
+        } else {
+
+            return <h4 className='mt-4'>WITH LOGO PRINTED ON SKIN</h4>
+        }
+    }
     return (
-        <div>
-            <div className="row black-body">
-                <div className='logo-select'>
-                    <div className='row'>
-                        <h4>Do you want the brand logo printed?</h4>
-                    </div>
-                    <div className='row logo-btns'>
-                        <div className="col span-1-of-2">
+        <form onSubmit={handleSubmit(onSubmit)} className='h-screen py-10'>
+            <div className="w-full flex h-full justify-center items-center">
+
+                <div
+                    className='bg-black h-3/4 flex flex-col justify-center items-center px-12 my-10 rounded-xl md:rounded-3xl text-white'>
+                    <h1 className='text-2xl md:text-3xl mb-10'>Select Print Logo</h1>
+                    <div className='flex w-full text-sm lg:text-base lg:font-semibold text-center'>
+                        <div className="flex flex-col justify-center items-center">
                             <Field
                                 className='hidden'
-                                component="input"
+                                component='input'
                                 type="radio"
                                 id={'wlogo'}
                                 name="withLogo"
-                                value="True"/>
-                            <label for="wlogo"><img src="assets/white.PNG" alt='Logo on'/></label>
-                            <h4>WITH LOGO PRINTED ON SKIN</h4>
+                                value={true}/>
+                            <label for="wlogo"><img src="assets/white_logo.PNG" alt='Logo on'/></label>
+                            <W/>
                         </div>
-                        <div className="col span-1-of-2">
+                        <div className="flex flex-col justify-center items-center">
                             <Field
                                 className='hidden'
-                                component="input"
+                                component='input'
                                 type="radio"
                                 id={'wologo'}
                                 name="withLogo"
-                                value="False"/>
-                            <label for="wologo"><img src="assets/white.PNG" alt='Logo on'/></label>
-                            <h4>WITHOUT LOGO PRINTED ON SKIN</h4>
+                                value={false}/>
+                            <label for='wologo'><img src="assets/white.PNG" alt='Logo off'/>
+                            </label>
+                            <WO/>
                         </div>
-                        <div>
-                            <button
-                                onClick={() => previousPage()}
-                                className=' text-white m-2 mt-10 left-10 bottom-10 border-4  px-8 md:px-12 py-2 tracking-widest text-sm md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black 'S >
-                                Back
-                            </button>
-                            <button
-                                onClick={() => nextPage()}
-                                className=' text-white m-2 mt-10 right-10 md:right-20 bottom-10 border-4 px-8 md:px-12 py-2 tracking-widest text-sm  md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black'>
-                                Next
-                            </button>
-                        </div>
+                    </div>
+                    <div>
+                        <button
+                            onClick={() => previousPage()}
+                            className=' text-white m-2 mt-10 left-10 bottom-10 border-4  px-8 md:px-12 py-2 tracking-widest text-sm md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black '>
+                            Back
+                        </button>
+                        <button
+                            className=' text-white m-2 mt-10 right-10 md:right-20 bottom-10 border-4 px-8 md:px-12 py-2 tracking-widest text-sm  md:text-lg font-semibold z-10 bg-cyan-400 border-cyan-400 rounded-xl uppercase drop-shadow-black'>
+                            Next
+                        </button>
                     </div>
                 </div>
 
             </div>
-        </div>
+        </form>
+
     )
 }
 
-const mapStateToProps = (state) => {}
+const mapStateToProps = (state) => {
 
-export default compose(reduxForm({request: 'console_order', destroyOnUnmount: false, forceUnregisterOnUnmount: true}), connect(mapStateToProps, null))(LogoPageConsole)
+    return {formV: state.form.console_order.values}
+}
+
+
+export default compose(reduxForm({form: 'console_order', destroyOnUnmount: false, forceUnregisterOnUnmount: true}), connect(mapStateToProps, null))(LogoPageConsole)

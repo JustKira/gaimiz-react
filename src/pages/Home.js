@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import EventHandler from '../components/EventHandler'
+import Response from './Ress/Response'
+import ResponseWButton from './Ress/ResponseWButton'
 
 const Home = () => {
 
     return (
 
-        <div className="">
+        <div className="w-screen overflow-x-hidden">
             <div className='flex justify-center'>
                 <img src={'/assets/home1.png'} className="w-screen z-20" alt="home1"/></div>
             <div

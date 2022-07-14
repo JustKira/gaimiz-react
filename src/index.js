@@ -22,7 +22,9 @@ ReactDOM.render(
     <Provider store={store}>
         <PersistGate persistor={persistor}>
             <BrowserRouter>
-                <App/>
+                <div className='h-full overflow-hidden'>
+                    <App/>
+                </div>
             </BrowserRouter>
         </PersistGate>
     </Provider>

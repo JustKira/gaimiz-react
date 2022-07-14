@@ -36,6 +36,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
     }
 
     return (
+        <div className='h-full py-10'>
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
             <div
                 className='mx-10 xl:mx-40 my-40 px-4 xl:px-20 py-32 md:py-60 lg:py-80 rounded-2xl bg-black relative'>
@@ -212,6 +213,7 @@ const LaptopDims = ({nextPage, previousPage, handleSubmit}) => {
 
             </div>
         </form>
+        </div>
     )
 }
 

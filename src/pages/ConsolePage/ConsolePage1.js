@@ -79,8 +79,9 @@ export default reduxForm({
     initialValues: {
         body: false,
         control: 0,
+        order_type: 'console',
         customimage: "False",
-        withlogo: "False"
+        withLogo: "true"
     }
 })(ConsolePage1)
 

@@ -12,10 +12,10 @@ export const userLogin = (email,password) => async (dispatch,getState) => {
             //redirect: 'follow'
         })
         let data = await response.json()
-        console.log(data)
-        if(data.detail) {
-            return dispatch({ type: 'USER_LOGIN', payload: null })
-        }
+
+        // if(data.detail) {
+        //     return dispatch({ type: 'USER_LOGIN', payload: data })
+        // }
 
         dispatch({ type: 'USER_LOGIN', payload: data })
         dispatch(getUserAction())
@@ -23,6 +23,10 @@ export const userLogin = (email,password) => async (dispatch,getState) => {
 }
 export const userLogoutAction = () => {
     return { type : 'USER_LOGOUT'}
+}
+
+export const clearUserData = () => {
+    return { type : 'CLEAR_USER_DATA'}
 }
 export const refreshTokenAction = () => async (dispatch,getState) => {
 
@@ -34,7 +38,6 @@ export const refreshTokenAction = () => async (dispatch,getState) => {
         body:JSON.stringify({'refresh': getState().auth.state.refresh})
     })
     let data = await response.json()
-    console.log(data)
     var finalreq = {"refresh":getState().auth.state.refresh , "access":data.access,"code":data.code,"detail":data.detail} 
 
     dispatch({type: 'TOKEN_REFRESH', payload : finalreq})
@@ -52,7 +55,7 @@ export const getUserAction = () => async (dispatch,getState) => {
         }
     })
     let data = await response.json()
-    console.log(data)
+
     dispatch({type: 'GET_USER_DATA', payload : data})
 }
 

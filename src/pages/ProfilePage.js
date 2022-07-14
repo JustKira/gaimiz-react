@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import {connect, useDispatch} from 'react-redux'
+import { useNavigate } from 'react-router'
 import {compose} from 'redux'
 import {Field, reduxForm} from 'redux-form'
 import ReduxField from '../components/form/ReduxField'
 import {getUserAction} from '../redux/actions'
-
+import Response from './Ress/Response'
+import ResponseWButton from './Ress/ResponseWButton'
 const ProfileField = ({
     input,
     label,
@@ -28,7 +30,7 @@ const ProfileField = ({
     )
 }
 
-const accountUpdate = async(formValues, user_id) => {
+const accountUpdate = async(formValues, user_id,getUserAction) => {
 
     let response = await fetch(`${process.env.REACT_APP_GAIMIZ_BACKEND_URL}/api/user-update/${user_id}`, {
         method: 'PATCH',
@@ -38,12 +40,7 @@ const accountUpdate = async(formValues, user_id) => {
         body: JSON.stringify(formValues)
     })
 
-    let data = await response.json()
-    console.log(data)
-
-    // try {     setResponse_txt(JSON.stringify(data)) } catch (error) {
-    // setResponse_txt(data) }
-
+    getUserAction()
 }
 
 const ProfilePage = (props) => {
@@ -52,12 +49,31 @@ const ProfilePage = (props) => {
         setShowData] = useState("")
 
     // <button onClick={() => props.dispatch({type: "USER_LOGOUT"})}>Logout</button>
+
+        const [fempty,setFempty] = useState(false)
+        const [success,setSucess] = useState(false)
+        const navigate = useNavigate()
+    const PopupHandler = () => {
+        if (fempty === true) {
+            return <Response head="ERROR" info="Cant update All feilds are empty, please fill up field what you want to change and click update to update your account with new values" close={()=>setFempty(false)}/>
+        }else if (success === true) {
+            return <ResponseWButton buttonfunc={()=> navigate('/') } buttontext="back" head="Success" info="Your account was Succesfully updated go back to home or Refreshe Page to see changes" close={()=>setSucess(false)}/>
+        } 
+        else {
+            return <div></div>
+        }
+    }
+
     function onSubmit(formValues) {
-        console.log(formValues)
-        accountUpdate(formValues, props.user.id)
-        props.getUserAction()
+
+        if(JSON.stringify(formValues) === '{}') {
+            return setFempty(true)
+        }
+     
+        accountUpdate(formValues,props.user.id, props.getUserAction())  
+        setSucess(true)
         //redirect: 'follow'
-       
+
     }
 
     const ProfileSwitcher = () => {
@@ -65,7 +81,7 @@ const ProfilePage = (props) => {
             return (
                 <div>
                     <form className='flex flex-col' onSubmit={props.handleSubmit(onSubmit)}>
-                    <label className='text-5xl font-thin mb-10'>Security</label>
+                        <label className='text-3xl lg:text-5xl font-thin mb-10'>Security</label>
                         <div>
                             <label className=' font-thin text-xl capitalize'>email</label>
                             <Field
@@ -75,7 +91,7 @@ const ProfilePage = (props) => {
                                 className="px-2 md:pr-44 py-2 md:py-3 my-3 mx-1  text-slate-600 relative bg-gray-300 rounded text-ssm md:text-sm shadow outline-none focus:outline-none focus:ring w-full"
                                 component={ProfileField}/>
                         </div>
-{/* 
+                        {/*
                         <div>
                             <label className=' font-thin text-xl capitalize'>password</label>
                             <Field
@@ -89,7 +105,7 @@ const ProfilePage = (props) => {
                         <div className='flex justify-end w-full'>
                             <button
                                 type='sumbit'
-                                className="text-white border-4 mt-20 px-4 md:px-12 py-1 md:py-2 tracking-widest text-center font-semibold z-10 text-ssm md:text-base bg-cyan-400 border-cyan-400 rounded-2xl uppercase drop-shadow-black w-1/4">Update</button>
+                                className="text-white border-4 mt-2 lg:mt-12 px-0 md:px-12 py-1 md:py-2 tracking-widest text-center font-semibold z-10 text-ssm md:text-base bg-cyan-400 border-cyan-400 rounded-2xl uppercase drop-shadow-black w-1/3 md:w-1/4">Update</button>
                         </div>
                     </form>
                 </div>
@@ -97,20 +113,22 @@ const ProfilePage = (props) => {
         }
         if (showData === "logout") {
             return (
-                <div className='flex h-full justify-between items-center'>
+
+                <div className='flex justify-between items-center'>
                     <h1 className='text-2xl font-semibold uppercase '>You Sure You want to logout</h1>
                     <button
-                        className="text-white border-4 px-4 md:px-12 py-1 md:py-2 tracking-widest text-center font-semibold z-10 text-ssm md:text-base bg-cyan-400 border-cyan-400 rounded-2xl uppercase drop-shadow-black w-1/4"
+                        className="text-white border-4 mt-2 px-0 md:px-12 py-1 md:py-2 tracking-widest text-center font-semibold z-10 text-ssm md:text-base bg-cyan-400 border-cyan-400 rounded-2xl uppercase drop-shadow-black w-1/3 md:w-1/4"
                         onClick={() => props.dispatch({type: "USER_LOGOUT"})}>Logout</button>
                 </div>
+
             )
         }
 
         return (
             <div>
                 <form className='flex flex-col' onSubmit={props.handleSubmit(onSubmit)}>
-                <label className='text-5xl font-thin mb-10'>Profile</label>
-                    <div className='flex justify-between w-full'>
+                    <label className='text-3xl lg:text-5xl font-thin mb-10'>Profile</label>
+                    <div className='flex flex-col lg:flex-row justify-between w-full'>
                         <div>
                             <label className=' font-thin text-xl capitalize'>firstname</label>
                             <Field
@@ -139,7 +157,7 @@ const ProfilePage = (props) => {
                             className="px-2 py-2 md:py-3 my-3 mx-1 md:mx-3 text-slate-600 relative bg-gray-300 rounded text-ssm md:text-sm shadow outline-none focus:outline-none focus:ring w-full"
                             component={ProfileField}/>
                     </div>
-                    
+
                     <div>
                         <label className=' font-thin text-xl capitalize'>phone</label>
                         <Field
@@ -160,7 +178,7 @@ const ProfilePage = (props) => {
                     </div>
                     <div className='flex flex-col mt-12 w-full'>
                         <label className='text-3xl font-thin'>Location</label>
-                        <div className='flex mt-10 justify-between w-full'>
+                        <div className='flex flex-col lg:flex-row mt-10 justify-between w-full'>
                             <div>
                                 <label className=' font-thin text-xl capitalize'>governorate</label>
                                 <Field
@@ -190,10 +208,10 @@ const ProfilePage = (props) => {
                             </div>
                         </div>
                         <div className='flex justify-end w-full'>
-                        <button
-                            type='sumbit'
-                            className="text-white border-4 mt-2 px-4 md:px-12 py-1 md:py-2 tracking-widest text-center font-semibold z-10 text-ssm md:text-base bg-cyan-400 border-cyan-400 rounded-2xl uppercase drop-shadow-black w-1/4">Update</button>
-                    </div>
+                            <button
+                                type='sumbit'
+                                className="text-white border-4 mt-2 lg:mt-44 px-0 md:px-12 py-1 md:py-2 tracking-widest text-center font-semibold z-10 text-ssm md:text-base bg-cyan-400 border-cyan-400 rounded-2xl uppercase drop-shadow-black w-1/3 md:w-1/4">Update</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -202,20 +220,24 @@ const ProfilePage = (props) => {
     }
 
     return (
-        <div className="flex justify-center items-center w-full h-screen ">
-            <div className='bg-white w-1/2 h-3/4 text-black px-10 my-10 drop-shadow-black rounded-2xl'>
-                <div className='flex w-full'>
+        <div className="w-full h-full lg:h-screen">
+            <PopupHandler/>
+            <div className='w-full h-full flex justify-center items-center py-10'>
+                <div
+                    className='bg-white w-full lg:w-1/2 h-full  text-black px-4 md:px-10 py-4 my-10 drop-shadow-black rounded-2xl'>
+                    <div className='flex w-full'>
 
-                    <ul className='w-20 capitalize text-xl pt-10'>
-                        <li className='py-2 cursor-pointer' onClick={() => setShowData("profile")}>profile</li>
-                        <li className='py-2 cursor-pointer' onClick={() => setShowData("security")}>security</li>
-                        <li className='py-2 cursor-pointer' onClick={() => setShowData("logout")}>logout</li>
-                    </ul>
+                        <ul className='w-2 lg:w-20 capitalize text-base lg:text-xl pt-10'>
+                            <li className='py-2 cursor-pointer' onClick={() => setShowData("profile")}>profile</li>
+                            <li className='py-2 cursor-pointer' onClick={() => setShowData("security")}>security</li>
+                            <li className='py-2 cursor-pointer' onClick={() => setShowData("logout")}>logout</li>
+                        </ul>
 
-                    <div className='ml-20 mt-10 w-full'>
-                        <ProfileSwitcher/>
+                        <div className='ml-20 mt-10 w-full'>
+                            <ProfileSwitcher/>
+                        </div>
+
                     </div>
-
                 </div>
             </div>
         </div>

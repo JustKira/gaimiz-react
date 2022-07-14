@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 const Header = ({user}) => {
     return (
         <nav
-            className='flex lg:h-24 md:h-16 sm:h-12 bg-black text-white font-semibold justify-between items-center w-full text-ssm md:text-sm lg:text-base'>
+            className='flex lg:h-24 md:h-16 sm:h-12 bg-black text-white font-semibold justify-between items-center w-full text-ssm md:text-sm lg:text-base z-50'>
             <ul className="flex px-8">
                 <li className="lg:mx-4 lg:px-2 duration-150 ease-in hover:text-cyan-400"><Link to="/cart">Cart
                     <FontAwesomeIcon className='mx-2 hidden md:inline-block' size="sm" icon="shopping-cart"/></Link>
