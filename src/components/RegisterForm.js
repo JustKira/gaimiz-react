@@ -56,7 +56,7 @@ const RegisterForm = (props) => {
         if (response_txt === '"success"') {
             return <ResponseWButtonCloseless
                 buttonfunc={() => {
-                navigate('login')
+                navigate('/login')
             }}
                 buttontext='Login'
                 head='Success'
